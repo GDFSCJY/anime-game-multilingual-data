@@ -4,7 +4,7 @@ Collection of multilingual language data from anime games stored in parquet form
 
 Jupyter notebook is used to generate the data from `GAMEDATA`. 
 
- - [Genshin Impact](#genshin-impact) 231514 rows
+ - [Genshin Impact](#genshin-impact) 237530 rows
  - [Arknights](#arknights) 139428 rows
 
 ## Genshin Impact
@@ -13,9 +13,9 @@ Jupyter notebook is used to generate the data from `GAMEDATA`.
 
 Language: en ja zh
 
- - GenshinReadable.parquet: 10239 rows
- - GenshinSubtitle.parquet: 168 rows
- - GenshinTextMap.parquet: 221107 rows
+ - GenshinReadable.parquet: 10410 rows
+ - GenshinSubtitle.parquet: 170 rows
+ - GenshinTextMap.parquet: 226950 rows
 
 Example:
 
