@@ -1,11 +1,11 @@
-# Anime Game Multilingual Language
+# Anime Game Multilingual Data
 
 Collection of multilingual language data from anime games stored in parquet format.
 
 Jupyter notebook is used to generate the data from `GAMEDATA`. 
 
  - [Genshin Impact](#genshin-impact) 231514 rows
- - [Arknights](#arknights) 57191 rows
+ - [Arknights](#arknights) 139428 rows
 
 ## Genshin Impact
 
@@ -39,23 +39,23 @@ Language: en ja zh
 
 > https://www.kaggle.com/datasets/toshihikochen/arknights-en-ja-zh
 
- - ArknightsStory.parquet: 57191 rows
+ - ArknightsStory.parquet: 139428 rows
 
 Example:
 
 |en|ja|zh|
 |---|---|---|
-|Operator Thorns accompanies Rhodes Island to S...|ロドス一行と共にシエスタに来たソーンズは、一日の休日を謳歌する。|干员棘刺随罗德岛来到汐斯塔，度过休闲一日。|
-|"When the sun started to set, the Ægirians, far..."|日が沈みゆく中、エーギル人は異郷のビーチに佇んでいた。程なくして、未知の敵と遭遇する——|而当日落临近，离乡的阿戈尔人在沙滩旁，偶然遭遇了未知的敌人|
-|Capone betrayed Gambino. Mostima rescued Bison...|カポネはガンビーノを裏切った。モスティマはバイソンを救い出した。そして鼠王は本当の姿を見せた...|卡彭背叛了甘比诺。莫斯提马救下了拜松。鼠王露出了真面目。龙门晚风轻拂。|
-|"Bison and Mostima, while wandering around seem..."|悠々と街を歩くバイソンとモスティマは、飴屋の前を通りかかったところでマフィアに狙われてしまう...|优哉游哉的拜松与莫斯提马路过了一家糖果店，却也在此时被黑手党盯上。为了顺利摆脱追踪，拜松跳上...|
-|"Yith is being watched by a certain Liberi, and..."|イースはあるリーベリに監視されており、そしてモスティマは以前から鼠王の存在を知っていた。 再...|伊斯遭到了某位黎博利的监视，而莫斯提马也早已知晓鼠王存在。重新汇合的企鹅物流众人得到了大帝的...|
+|"In the Grand Knight Territory, Margaret asks a..."|大騎士領内。祖父の墓参りから戻ったマーガレットが過去について老騎士らに問う。一方荒野では、旧...|大骑士领内，给祖父扫墓归来的玛嘉烈问起旧事。荒野上，告别了旧友的玛恩纳和托兰谈论前路。|
+|Deszcz the attorney's business trip is heavily...|車の故障により、弁護士デーシュットの予定は大幅に遅れていた。自分のせいで叩き売られようとして...|由于车辆意外故障，律师黛丝特的行程严重耽搁。这个即将因她而被低价卖掉的村庄留宿她一晚，她看见...|
+|Flametail and Ashlock head for border city Dzw...|国境都市ズウォネクを訪れたフレイムテイルとアッシュロックは、現地の感染者が扇動されていること...|焰尾和灰毫前往边境城市茨沃涅克，发现此地的感染者正受人煽动。唯一与她们友善沟通的感染者被迫背...|
+|"Laying low in Dzwonek, Szewczyk gets dragged i..."|人目を忍ぶためズウォネクへ越してきたシェブチックは、学校帰りの息子を迎えに行く途中で爆発事件...|搬到茨沃涅克避风头的瑟奇亚克只是去接儿子放学，却被卷入一场爆炸之中。|
+|"His plot revealed, Czcibor heads down a path o..."|陰謀が暴かれ、後戻りできないことを悟った騎士団長シチボルは、自らの意地を通すことを決意する。...|阴谋败露，自知没有回头路的骑士团长切斯柏一意孤行，而玛恩纳等在他前去拦截刺杀目标的路上。|
 |...|...|...|
-|Preparation is always the first step of victory.|作戦前の周到な準備は、常に勝利への第一歩となる。|做好战前的准备永远都是胜利的第一步。|
-|"Now then, I will be officially transferring th..."|じゃあ、危機契約————作戦コード「荒廃」に関して、正式にドクターに委任するよ。|那么，危机合约————代号荒芜行动，正式转交给博士。|
-|"Subsequently, PRTS will collate all the releva..."|ここからはPRTSが関連資料の整理をしてくれるよ。もし何か分からないことがあったら管理画面で...|PRTS会做好后续的相关资料整理工作，如果还有疑问博士可以在管理界面进行再确认。|
-|The operation has officially begun. I wish eve...|じゃあ始めよう。みんなどうか無事でね。|行动正式开始，祝大家一切顺利。|
-|May we bring hope to this Catastrophe-stricken...|この多事多難な大地に、僕たちが希望をもたらしていこう。|愿我们能为这片多灾的大地带去希望。|
+|"To a certain extent, it also sends a sort of m..."|そして他のブラッドブルードに「この者は妾の庇護を受けている」といったメッセージを伝える役割もある。|当然某种程度上，也向其他血魔传达了“此人受我保护”这样的讯息。|
+|Do you display your companionship in such a ma...|あなたもそういう方法で友情を表現するのか、ブラッドブルード？|你也用这种方式表现友谊吗，血魔？|
+|"Of course, if you're willing to sign on a disc..."|もちろん、そなたらが免責事項にサインをして妾の実験に参加してくれるというのであれば、妾は断り...|当然你们要是愿意在免责声明上签下名字参加我的实验，我也是不会拒绝的啦。|
+|I think I gotta go to rehearsal too. Me and Mu...|あたしもリハーサルしなきゃ……マドロックさん、行きましょう。|我好像也要排练来着，泥岩我们一起走吧。|
+|"Wa—Wait, you can still participate, even if yo..."|ま、待たぬか！　サインはせずとも実験には参加してよいのだぞ、行くな！|等，等等啊，不签免责声明也可以直接来参加实验啊，别走！|
 
 # How to load parquet file
 
