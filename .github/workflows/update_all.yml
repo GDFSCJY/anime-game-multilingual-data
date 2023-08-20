@@ -1,0 +1,71 @@
+name: Update All
+on:
+  workflow_dispatch:
+jobs:
+  update_data:
+    strategy:
+      max-parallel: 2
+      matrix:
+        include:
+          - title: arknights-story
+            code_file: .github/scripts/ArknightsStory.py
+          - title: genshin-readable
+            code_file: .github/scripts/GenshinReadable.py
+          - title: genshin-subtitle
+            code_file: .github/scripts/GenshinSubtitle.py
+          - title: genshin-textmap
+            code_file: .github/scripts/GenshinTextMap.py
+    uses: ./.github/workflows/update.yml
+    with:
+      title: ${{ matrix.title }}
+      code_file: ${{ matrix.code_file }}
+      language: python
+      kernel_type: script
+      is_private: true
+      enable_gpu: true
+      enable_internet: true
+      save_outputs: true
+      outputs_path: outputs
+      upload_to_artifact: true
+    secrets:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+
+  update_repo:
+    needs:
+      - update_data
+    name: Update Repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: auto-update
+      - name: Download Data
+        uses: actions/download-artifact@v3
+        with:
+          path: ${{ github.workspace }}/download
+      - name: Process Data
+        run: |
+          tree ${{ github.workspace }}/download
+          find ${{ github.workspace }}/download -mindepth 2 -type f -exec mv -i '{}' ./download ';'
+          find ${{ github.workspace }}/download -mindepth 1 -type d -empty -delete
+          find ${{ github.workspace }}/download -mindepth 1 -type f -name '*.log' -delete
+          rm -rf ${{ github.workspace }}/parquet
+          mv ${{ github.workspace }}/download ${{ github.workspace }}/parquet
+          git config --local user.email ${{ secrets.GIT_EMAIL }}
+          git config --local user.name ${{ secrets.GIT_USERNAME }}
+          git add .
+      - name: Update README
+        run: |
+          pip install pandas pyarrow tabulate
+          python ${{ github.workspace }}/.github/update-readme.py
+          git add .
+      - name: Commit changes
+        run: |
+          git commit -m "Update data $(date +'%Y-%m-%d %H:%M:%S')"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT_GITHUB }}
+          branch: ${{ github.ref }}
+          force_with_lease: true
