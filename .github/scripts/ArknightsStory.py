@@ -8,8 +8,8 @@ def callsh(command):
     print(status.stdout)
 
 
-# git clone https://github.com/GDFSCJY/test-auto-update-anime-game-multilingual-data.git
-callsh('git clone https://github.com/GDFSCJY/test-auto-update-anime-game-multilingual-data.git')
+# git clone https://github.com/GDFSCJY/test-auto-update-anime-game-multilingual-data.git -b auto-update
+callsh('git clone https://github.com/GDFSCJY/test-auto-update-anime-game-multilingual-data.git -b auto-update')
 # cd update-anime-game-multilingual-data
 os.chdir('test-auto-update-anime-game-multilingual-data')
 # git submodule init GAMEDATA/ArknightsData
