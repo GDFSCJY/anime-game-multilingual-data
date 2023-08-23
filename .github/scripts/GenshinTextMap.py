@@ -10,8 +10,8 @@ def callsh(command):
 
 # git clone https://github.com/GDFSCJY/anime-game-multilingual-data.git -b auto-update
 callsh('git clone https://github.com/GDFSCJY/anime-game-multilingual-data.git -b auto-update')
-# cd update-anime-game-multilingual-data
-os.chdir('test-auto-update-anime-game-multilingual-data')
+# cd anime-game-multilingual-data
+os.chdir('anime-game-multilingual-data')
 # git submodule init GAMEDATA/GenshinData
 callsh('git submodule init GAMEDATA/GenshinData')
 # git submodule update --remote GAMEDATA/GenshinData
@@ -147,4 +147,4 @@ df.to_parquet('../GenshinTextMap.parquet', index=False)
 
 # remove repository
 os.chdir('../')
-callsh('rm -rf test-auto-update-anime-game-multilingual-data')
+callsh('rm -rf anime-game-multilingual-data')
