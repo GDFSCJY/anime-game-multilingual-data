@@ -37,7 +37,7 @@ tqdm.__init__ = partialmethod(tqdm.__init__, disable=True)
 # load all en ja zh json file paths
 en_text_map_path = 'GAMEDATA/StarRailData/TextMap/TextMapEN.json'
 ja_text_map_path = 'GAMEDATA/StarRailData/TextMap/TextMapJP.json'
-zh_text_map_path = 'GAMEDATA/StarRailData/TextMap/TextMapCN.json'
+zh_text_map_path = 'GAMEDATA/StarRailData/TextMap/TextMapCHS.json'
 
 # read json file and append to df
 # json format: {index: text}
@@ -143,7 +143,7 @@ df['zh'] = df['zh'].apply(lambda x: x.replace('』', '’'))
 df = df.drop(columns=['en_len', 'ja_len', 'zh_len', 'score'])
 
 # save to parquet
-df.to_parquet('../GenshinTextMap.parquet', index=False)
+df.to_parquet('../StarRailTextMap.parquet', index=False)
 
 # remove repository
 os.chdir('../')
